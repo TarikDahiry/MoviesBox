@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/poster_image"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
+        android:contentDescription="Movie poster image" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toEndOf="@id/poster_image"
+        android:layout_toRightOf="@id/poster_image"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.1"
+        tools:rating="4.5" />
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_bar"
+        android:layout_alignStart="@+id/rating_bar"
+        android:layout_alignLeft="@+id/rating_bar"
+        android:layout_marginTop="8dp"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/poster_image"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textStyle="italic"
+        tools:text="TextView" />
+
+    <!--  // Cast view container-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/casts_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:id="@+id/trailers_view"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_below="@id/casts_recycler_view"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <!--  // Youtube Player Fragment -->
+        <FrameLayout
+            android:id="@+id/youtube_player_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <!-- RecyclerView to display the movie trailer -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"/>
+    </LinearLayout>
+
+    <!--  // Review view container-->
+    <LinearLayout
+        android:id="@+id/reviews_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/trailers_view"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textStyle="italic|bold"
+            android:text="Audience Reviews"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/reviews_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+</RelativeLayout>

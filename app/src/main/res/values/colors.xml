@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D32F2F</color>
+    <color name="colorPrimaryDark">#d50000</color>
+    <color name="colorAccent">#80D32F2F</color>
+    <color name="listBackground">#fafafa</color>
+    <color name="menuBackground">#80D32F2F</color>
+    <color name="colorTransBar">#30000000</color>
+</resources>
